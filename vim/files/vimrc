@@ -50,6 +50,10 @@ runtime! archlinux.vim
 runtime! debian.vim
 {% endif -%}
 
+{%- if grains['os'] == 'Raspian' -%}
+runtime! debian.vim
+{% endif -%}
+
 {%- if config -%}
 {{ set_config(config) }}
 {% endif -%}
